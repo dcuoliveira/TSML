@@ -9,7 +9,7 @@ library('dplyr')
  #                     n.obs=1, # number of observations or replicates
  #                     n.var=5, # number of variables
  #                     seed=221994, # 
- #                     prob0=0.1, # initial sparsity level
+ #                     prob0=0.1, # initial sparsity level (i.e. lambda value in lasso model)
  #                     network=c("random"), # type of the network
  #                     prec=NULL, # precision matrix (inverse of the covariance)
  #                     gamma1=NULL, # autoregressive coefficient matrix at time lag 1
@@ -35,4 +35,5 @@ coef_matrix = datas$gamma
 
 ts.plot(datas$data1, col=c("blue","green","red","yellow", "black"))
 
-ts.plot(cbind(simu_data[,3], simu_data[,2]), col=c("blue", "red"))
+# choose pair of TS with the highest coefficient used in the simulation
+# ts.plot(cbind(simu_data[,3], simu_data[,2]), col=c("blue", "red"))
